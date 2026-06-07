@@ -1,0 +1,32 @@
+@startuml Login
+skinparam titleFontSize 32
+
+title login
+actor Pengguna
+participant Sistem
+
+== Initial Access ==
+Pengguna -> Sistem: Mengakses laman E-Learning
+activate Sistem
+Sistem --> Pengguna: Menampilkan halaman Login
+deactivate Sistem
+
+== Login Attempt Loop ==
+loop Hingga Valid 
+    Pengguna -> Pengguna: Melihat halaman Login
+    Pengguna -> Pengguna: Mengisi Form Login
+    Pengguna -> Sistem: Menklik tombol "Masuk"
+    activate Sistem
+    
+    Sistem -> Sistem: Validasi Form Login
+    
+    alt Valid? (Ya)
+        Sistem --> Pengguna: Menampilkan halaman utama
+        note right of Sistem: Process ends successfully
+    else Valid? (Tidak)
+        Sistem -> Sistem: Reset Form
+        Sistem --> Pengguna: Halaman Login (Form Kosong)
+        deactivate Sistem
+    end
+end
+@enduml
