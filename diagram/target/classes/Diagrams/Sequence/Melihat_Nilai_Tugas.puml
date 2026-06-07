@@ -1,0 +1,21 @@
+@startuml Melihat_Nilai_Tugas
+skinparam sequenceArrowColor Black
+skinparam sequenceLifeLineBorderColor Black
+skinparam sequenceParticipantBorderColor Black
+skinparam sequenceParticipantBackgroundColor White
+skinparam sequenceActorBorderColor Black
+skinparam sequenceActorBackgroundColor White
+skinparam TitleFontSize 22
+skinparam NoteFontSize 16
+
+title Sequence Diagram - Melihat Nilai Tugas
+
+actor "Murid/Guru" as User
+participant Sistem
+
+User -> Sistem : Memilih Tugas Dinilai
+Sistem --> User : Menampilkan semua Tugas Dinilai
+
+note left of User : Melihat kumpulan tugas\nyang sudah dinilai
+
+@enduml
