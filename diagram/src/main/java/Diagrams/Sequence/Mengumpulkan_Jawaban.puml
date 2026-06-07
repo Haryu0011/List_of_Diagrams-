@@ -1,0 +1,40 @@
+@startuml Mengumpulkan_Jawaban
+skinparam sequenceArrowColor Black
+skinparam sequenceLifeLineBorderColor Black
+skinparam sequenceParticipantBorderColor Black
+skinparam sequenceParticipantBackgroundColor White
+skinparam sequenceActorBorderColor Black
+skinparam sequenceActorBackgroundColor White
+skinparam TitleFontSize 22
+skinparam NoteFontSize 16
+
+title Mengumpulkan Jawaban
+
+actor Murid
+participant Sistem
+
+Murid -> Sistem : Memilih Tugas Aktif
+Sistem --> Murid : Menampilkan Semua Tugas Aktif
+
+note left of Murid : Melihat kumpulan tugas aktif
+Murid -> Sistem : Memilih tugas yang akan dikerjakan
+Sistem --> Murid : Menampilkan detail tugas
+
+note left of Murid : Melihat Detail Tugas
+
+loop Sampai Data Berhasil Disimpan
+    Murid -> Sistem : Mengunggah file/gambar & klik "Upload"
+    Sistem -> Sistem : Menyimpan data
+    
+    alt Data tidak disimpan
+        Sistem -> Sistem : Reset Form
+        Sistem --> Murid : Meminta unggah ulang
+    else Data disimpan
+        Sistem -> Sistem : Tandai Tugas sebagai Selesai
+        Sistem --> Murid : Menampilkan status tugas selesai
+    end
+end
+
+note left of Murid : Melihat status tugas selesai
+
+@enduml
