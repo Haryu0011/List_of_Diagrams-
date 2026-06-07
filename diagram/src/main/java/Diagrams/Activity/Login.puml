@@ -1,0 +1,36 @@
+@startuml Login
+skinparam ActivityBorderColor Black 
+skinparam ActivityBackgroundColor White
+skinparam ActivityDiamondBorderColor Black
+skinparam ArrowColor Black
+skinparam TitleFontSize 22
+skinparam ActivityFontSize 16
+
+title Login 
+
+|#fefefe|P|Murid/Guru
+start
+:Mengakses laman E-Learning;
+
+|#ddd|S|Sistem
+:Menampilkan halaman Login;
+
+|P|
+:Melihat halaman Login;
+
+repeat :Mengisi Form Login;
+    :Menklik tombol **"Masuk"**;
+    |S|
+    :Validasi Form Login;
+    backward: Reset Form;
+repeat while (Valid?) is (Tidak) not (Ya)
+
+|S|
+:Menampilkan halaman utama;
+
+|P|
+:Melihat halaman utama;
+
+stop
+
+@enduml

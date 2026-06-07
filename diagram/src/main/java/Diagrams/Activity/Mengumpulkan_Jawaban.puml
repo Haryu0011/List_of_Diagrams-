@@ -1,0 +1,41 @@
+@startuml Mengumpulkan_Jawaban
+skinparam ActivityBorderColor Black 
+skinparam ActivityBackgroundColor White
+skinparam ActivityDiamondBorderColor Black
+skinparam ArrowColor Black
+skinparam TitleFontSize 22
+skinparam ActivityFontSize 16
+
+title Mengumpulkan Jawaban
+
+|M|Murid
+start
+:Memilih Tugas Aktif;
+
+|#ddd|S|Sistem
+#White:Menampilkan Semua Tugas Aktif;
+
+|M|
+:Melihat kumpulan tugas aktif;
+:Memilih tugas yang akan dikerjakan;
+
+|S|
+:Menampilkan detail tugas;
+
+|M|
+:Melihat Detail Tugas;
+
+repeat :Mengunggah file/gambar di kolom isi;
+:Menklik tombol **"Upload"**;
+
+|S|
+backward: Reset Form;
+:Menyimpan data;
+repeat while (Data disimpan?) is (Tidak) not (Ya) 
+:Tandai Tugas sebagai Selesai;
+
+|M|
+:Melihat status tugas selesai;
+ 
+stop
+@enduml

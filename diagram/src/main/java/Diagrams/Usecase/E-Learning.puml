@@ -1,0 +1,40 @@
+@startuml E-Learning
+skinparam RectangleBackgroundColor #FAFAFA
+
+'Arah Tampilan
+left to right direction
+
+'Style boundry
+skinparam packageStyle rectangle
+skinparam usecase {
+    BackgroundColor white
+    BorderColor black
+}
+
+'aktor
+actor "Murid" as M
+actor "Guru" as G 
+
+'boundry
+rectangle "E-Learning System - Sekolah ABC" as System {
+    usecase "Login" as Login
+    usecase "Mengumpulkan Jawaban" as Kirim
+    usecase "Menilai Tugas" as Nilai
+    usecase "Logout" as Logout
+    usecase "Melihat Nilai Tugas" as LihatRiwayat
+}
+    
+' Murid
+M --> Login
+M --> Kirim
+M --> Logout
+M --> LihatRiwayat
+
+'Guru
+G -[#Red]-> Login
+G -[#Red]-> Nilai
+G -[#Red]-> Logout
+G -[#Red]-> LihatRiwayat
+
+
+@enduml

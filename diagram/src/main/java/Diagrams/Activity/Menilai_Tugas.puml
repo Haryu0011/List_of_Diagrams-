@@ -1,0 +1,42 @@
+@startuml Menilai_Tugas
+skinparam ActivityBorderColor Black 
+skinparam ActivityBackgroundColor White
+skinparam ActivityDiamondBorderColor Black
+skinparam ArrowColor Black
+skinparam TitleFontSize 22
+skinparam ActivityFontSize 16
+
+title Menilai Tugas
+ 
+|G|Guru
+start
+:Memilih Tugas Aktif;
+
+|#DDD|S|Sistem
+:Menampilkan semua Tugas Aktif;
+
+|G|
+:Melihat kumpulan Tugas Selesai;
+:Memilih Tugas yang akan dinilai;
+
+|S|
+:Menampilkan detail tugas;
+
+|G|
+:Melihat detail tugas;
+:Melihat Jawaban Siswa;
+
+repeat :Menilai Tugas di Kolom Nilai Tugas;
+    |G|
+    :Klik Tombol **"Beri Nilai"**;
+
+    |S|
+    :Menyimpan Data;
+    backward:Reset Form; 
+repeat while (Simpan Berhasil ? ) is (No) not (Yes)
+
+|G|
+:Melihat nilai tugas;
+stop
+
+@enduml

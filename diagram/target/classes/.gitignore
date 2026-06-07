@@ -1,0 +1,7 @@
+usecase_tiket.puml
+*.class
+out/
+bin/
+.idea/
+*.iml
+.DS_Store

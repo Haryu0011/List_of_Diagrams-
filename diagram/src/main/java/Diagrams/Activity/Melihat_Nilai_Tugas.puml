@@ -1,0 +1,23 @@
+@startuml Melihat_Nilai_tugas
+skinparam ActivityBorderColor Black 
+skinparam ActivityBackgroundColor White
+skinparam ActivityDiamondBorderColor Black
+skinparam ArrowColor Black
+skinparam TitleFontSize 22
+skinparam ActivityFontSize 16
+
+title Melihat Nilai Tugas
+
+|P|Murid/Guru
+start
+:Memilih Tugas Dinilai;
+
+|#ddd|S|Sistem
+:Menampilkan semua Tugas Dinilai;
+
+|P|
+:Melihat kumpulan tugas yang sudah dinilai;
+
+stop
+
+@enduml

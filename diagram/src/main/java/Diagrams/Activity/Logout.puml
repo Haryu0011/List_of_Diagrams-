@@ -1,0 +1,22 @@
+@startuml Logout
+skinparam ActivityBorderColor Black 
+skinparam ActivityBackgroundColor White
+skinparam ActivityDiamondBorderColor Black
+skinparam ArrowColor Black
+skinparam TitleFontSize 22
+skinparam ActivityFontSize 16
+
+title Logout
+
+|#fefefe|P|Murid/Guru
+start
+:Klik tombol **"Keluar"**;
+
+|#ddd|S|Sistem
+:Memproses data pengguna;
+:Mengalihkan pengguna ke halaman login;
+|P|
+:Melihat halaman login;
+
+stop
+@enduml
